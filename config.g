@@ -17,17 +17,17 @@ M586 P2 S0                                     ; disable Telnet
 
 ; Drives
 ; https://www.youtube.com/watch?v=s68U6BwxHpI
-M569 P0 S0 D3 T0.1:0.1:0.02:0.02 V50 H30; D3 (stealshop)              ; physical drive 0 goes forwards using default driver timings
-M569 P1 S0 D3 T0.1:0.1:0.02:0.02 V50 H30  ; D3 (stealshop)              ; physical drive 1 goes forwards using default driver timings
-M569 P2 S1 D3 T0.1:0.1:0.02:0.02  ;high torque (spreadcycle)       ; physical drive 2 goes forwards using default driver timings
+M569 P0 S0 D3 T0.1:0.1:0.02:0.02 V65 H30; D3 (stealshop)              ; physical drive 0 goes forwards using default driver timings
+M569 P1 S0 D3 T0.1:0.1:0.02:0.02 V65 H30  ; D3 (stealshop)              ; physical drive 1 goes forwards using default driver timings
+M569 P2 S1 D2 T0.1:0.1:0.02:0.02  ;high torque (spreadcycle)       ; physical drive 2 goes forwards using default driver timings
 M569 P3 S1 T0.1:0.1:0.02:0.02     ;high torque (spreadcycle)       ; physical drive 3 goes forwards using default driver timings
 M584 X0 Y1 Z2 E3                               ; set drive mapping
 M350 X16 Y16 Z16 E16 I1                        ; configure microstepping with interpolation
 M92 X80.00 Y80.00 Z400.00 E417.50              ; set steps per mm
-M566 X700.00 Y700.00 Z60.00 E2500.00           ; set maximum instantaneous speed changes (mm/min)
-M203 X10000.00 Y10000.00 Z900.00 E3600.00      ; set maximum speeds (mm/min)
-M201 X1000.00 Y1000.00 Z140.00 E2500.00        ; set accelerations (mm/s^2)
-M906 X950 Y950 Z800 E800 I30                   ; set motor currents (mA) and motor idle factor in per cent
+M566 X700.00 Y700.00 Z60.00 E1200.00           ; set maximum instantaneous speed changes (mm/min)
+M203 X10000.00 Y10000.00 Z180.00 E1200.00      ; set maximum speeds (mm/min)
+M201 X1000.00 Y1000.00 Z50.00 E2000.00        ; set accelerations (mm/s^2)
+M906 X1400 Y1400 Z1100 E800 I30                   ; set motor currents (mA) and motor idle factor in per cent
 M84 S30                                        ; Set idle timeout
 
 ; Axis Limits
