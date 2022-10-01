@@ -17,6 +17,7 @@ M586 P2 S0                                     ; disable Telnet
 
 ; Drives
 ; https://www.youtube.com/watch?v=s68U6BwxHpI
+; https://duet3d.dozuki.com/Wiki/Tuning_Stepper_Motor_Drivers
 M569 P0 S0 D3 T0.1:0.1:0.02:0.02 V65 H30; D3 (stealshop)              ; physical drive 0 goes forwards using default driver timings
 M569 P1 S0 D3 T0.1:0.1:0.02:0.02 V65 H30  ; D3 (stealshop)              ; physical drive 1 goes forwards using default driver timings
 M569 P2 S1 D2 T0.1:0.1:0.02:0.02  ;high torque (spreadcycle)       ; physical drive 2 goes forwards using default driver timings
@@ -45,9 +46,9 @@ M574 Y1 S3                                     ; configure sensorless endstop fo
 ; Z-Probe ; tut https://betrue3d.dk/bltouch-on-duet-wifi-configuratio-and-usage/#homezg
 M950 S0 C"servo0"                              ; create servo pin 0 for BLTouch
 M558 P9 C"^zstop" H6 F120 T6000                ; set Z probe type to bltouch and the dive height + speeds
-G31 P500 X30 Y10 Z1.62                       ; set Z probe trigger value, offset and trigger height
+G31 P500 X30 Y10 Z1.6                       ; set Z probe trigger value, offset and trigger height
 ;https://duet3d.dozuki.com/Wiki/Test_and_calibrate_the_Z_probe
-M557 X15:215 Y15:155 S20                       ; define mesh grid
+M557 X37:265 Y25:155 S20                       ; define mesh grid
 ; https://duet3d.dozuki.com/Wiki/Using_mesh_bed_compensation
 
 
